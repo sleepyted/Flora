@@ -89,9 +89,9 @@ public abstract class CompressCallable<T> implements Callable<String> {
         if (size > 0 && isSuccess) {
             float outfileSize = (float) FileUtil.getSizeInBytes(outfile) / (float) 1024;
             while (outfileSize > size) {
-                if (quality <= 25)
+                if (quality <= 1)
                     break;
-                quality -= 5;
+                quality -= 9;
                 isSuccess = compress(bitmap, outfile, quality);
                 if (!isSuccess)
                     break;
